@@ -166,6 +166,7 @@ config_package_add luci-app-autoreboot
 # 第三方软件包
 mkdir -p package/custom
 git clone --depth 1  https://github.com/217heidai/OpenWrt-Packages.git package/custom
+git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom
 clean_packages package/custom
 # golang
 rm -rf feeds/packages/lang/golang
@@ -173,15 +174,17 @@ mv package/custom/golang feeds/packages/lang/
 # argon 主题
 config_package_add luci-theme-argon
 ## passwall
-config_package_add luci-app-passwall
-config_package_add luci-app-passwall_Nftables_Transparent_Proxy
-config_package_del luci-app-passwall_Iptables_Transparent_Proxy
-config_package_del luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client
-config_package_del luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server
-config_package_del luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client
-config_package_del luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server
-config_package_del luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client
-config_package_del luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server
+# config_package_add luci-app-passwall
+# config_package_add luci-app-passwall_Nftables_Transparent_Proxy
+# config_package_del luci-app-passwall_Iptables_Transparent_Proxy
+# config_package_del luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client
+# config_package_del luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server
+# config_package_del luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client
+# config_package_del luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server
+# config_package_del luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client
+# config_package_del luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server
+
+config_package_add luci-app-openclash
 
 # 镜像生成
 # 修改分区大小
